@@ -18,11 +18,11 @@ Permite cadastrar, pesquisar, editar e excluir títulos. Controla informações 
 
 ### 3. Gerenciamento de Clientes
 Uma interface limpa para gerenciar o cadastro de clientes, incluindo validações básicas e campos para Nome, CPF, Telefone, E-mail e Endereço.
-![Gerenciamento de Clientes](/home/eduardo/Modelos/Programação/locadora_dvd/imagens/3.png)
+![Gerenciamento de Clientes](imagens/3.png)
 
 ### 4. Controle de Locações (Nova Locação)
 Permite realizar o empréstimo de filmes selecionando dinamicamente títulos disponíveis e clientes cadastrados. O sistema calcula a data esperada de devolução com base nos dias estipulados de locação.
-![Nova Locação](/home/eduardo/Modelos/Programação/locadora_dvd/imagens/4.png)
+![Nova Locação](imagens/4.png)
 
 ### 5. Relatórios & Estatísticas
 Aba com relatórios interativos para auxiliar na tomada de decisão, listando:
@@ -30,7 +30,7 @@ Aba com relatórios interativos para auxiliar na tomada de decisão, listando:
 * Melhores clientes.
 * Locações em atraso (com cálculo dinâmico de dias de atraso e valor total acumulado).
 * Histórico completo de locações ativas e concluídas.
-![Relatórios](/home/eduardo/Modelos/Programação/locadora_dvd/imagens/5.png)
+![Relatórios](imagens/5.png)
 
 ---
 
@@ -65,13 +65,13 @@ locadora_dvd/
 ## ⚡ Principais Funcionalidades & Pontos Relevantes
 
 1. **Persistência de Dados & Concorrência Segura**: 
-   * Configuração do SQLite no modo **WAL (Write-Ahead Logging)** no arquivo [connection.py](file:///home/eduardo/Modelos/Programação/locadora_dvd/database/connection.py#L14), permitindo leituras e escritas concorrentes sem travamentos.
-   * Utilização de um gerenciador de contexto (`@contextmanager`) no método [db](file:///home/eduardo/Modelos/Programação/locadora_dvd/database/connection.py#L20-L35) que realiza commits automáticos e rollback automático em caso de exceções, evitando conexões vazadas.
+   * Configuração do SQLite no modo **WAL (Write-Ahead Logging)** no arquivo [connection.py](file:///database/connection.py#L14), permitindo leituras e escritas concorrentes sem travamentos.
+   * Utilização de um gerenciador de contexto (`@contextmanager`) no método [db](file:///database/connection.py#L20-L35) que realiza commits automáticos e rollback automático em caso de exceções, evitando conexões vazadas.
 2. **Regras de Negócio de Locação**:
-   * Controle de estoque: a quantidade disponível do filme é decrementada automaticamente ao realizar uma locação e incrementada ao receber uma devolução ([models.py](file:///home/eduardo/Modelos/Programação/locadora_dvd/database/models.py#L231-L252)).
+   * Controle de estoque: a quantidade disponível do filme é decrementada automaticamente ao realizar uma locação e incrementada ao receber uma devolução ([models.py](file:///database/models.py#L231-L252)).
    * Cálculo de multas: no momento da devolução, o sistema compara a data atual com a data limite esperada. Havendo atraso, é gerada uma multa diária acumulada com base na configuração do filme.
 3. **Design System Moderno**:
-   * O arquivo [theme.py](file:///home/eduardo/Modelos/Programação/locadora_dvd/utils/theme.py) centraliza as constantes visuais (cores secundárias, destaques em Indigo/Violeta, fontes e glifos Unicode).
+   * O arquivo [theme.py](file:///utils/theme.py) centraliza as constantes visuais (cores secundárias, destaques em Indigo/Violeta, fontes e glifos Unicode).
    * Suporte nativo a Light/Dark Mode gerenciado pelo CustomTkinter.
 
 ---
@@ -87,7 +87,7 @@ locadora_dvd/
 
 1. **Clonar ou acessar a pasta do projeto**:
    ```bash
-   cd /home/eduardo/Modelos/Programação/locadora_dvd
+   cd /home/usuario/locadora_dvd
    ```
 
 2. **Ativar o ambiente virtual**:
@@ -114,7 +114,7 @@ O projeto foi empacotado utilizando **PyInstaller** em um único executável sta
 #### Detalhes do Build
 * **Tipo**: Um único arquivo executável (`--onefile`).
 * **Interface**: Sem console de terminal em segundo plano (`--windowed`).
-* **Ícone**: Configurado com o ícone oficial [logo.ico](file:///home/eduardo/Modelos/Programação/locadora_dvd/logo.ico).
+* **Ícone**: Configurado com o ícone oficial [logo.ico](file:///locadora_dvd/logo.ico).
 * **Banco de dados integrado**: O banco SQLite inicial está contido no executável. Na primeira execução, ele é copiado automaticamente para o diretório do executável, garantindo que as alterações (cadastros e locações) sejam gravadas permanentemente de forma persistente.
 
 #### Como Executar o Executável
