@@ -10,11 +10,11 @@ Abaixo estão apresentadas as principais telas do sistema, ilustrando o fluxo de
 
 ### 1. Dashboard Principal
 A tela inicial fornece uma visão consolidada do estado atual da locadora, exibindo métricas-chave e a receita financeira acumulada no mês atual.
-![Dashboard Principal](/home/eduardo/Modelos/Programação/locadora_dvd/imagens/1.png)
+![Dashboard Principal](imagens/1.png)
 
 ### 2. Gerenciamento de Filmes
 Permite cadastrar, pesquisar, editar e excluir títulos. Controla informações como diretor, gênero, sinopse, preço da diária, multa por atraso, quantidade total em estoque e quantidade disponível no momento.
-![Gerenciamento de Filmes](/home/eduardo/Modelos/Programação/locadora_dvd/imagens/2.png)
+![Gerenciamento de Filmes](imagens/2.png)
 
 ### 3. Gerenciamento de Clientes
 Uma interface limpa para gerenciar o cadastro de clientes, incluindo validações básicas e campos para Nome, CPF, Telefone, E-mail e Endereço.
